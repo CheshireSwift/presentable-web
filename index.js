@@ -47,4 +47,4 @@ function retreat() {
 document.addEventListener('keydown', e => (e.keyCode == 39) && advance())
 document.addEventListener('keydown', e => (e.keyCode == 37) && retreat())
 
-module.exports = { advance, retreat }
+module.exports = { advance, retreat, slide: advCounter }
