@@ -18,39 +18,33 @@
 //
 //      <div id="iphone-container" class="adv-0 adv-hide"></div>
 
-var slides = function() {
-  var advCounter = 0;
 
-  function advance() {
-    var elems = document.getElementsByClassName('adv-' + advCounter)
-    if (!elems.length) {
-      return
-    }
+var advCounter = 0;
 
-    for (var i = 0; i < elems.length; i++) {
-      elems.item(i).classList.remove('adv-hide')
-    }
-    advCounter++
+function advance() {
+  var elems = document.getElementsByClassName('adv-' + advCounter)
+  if (!elems.length) {
+    return
   }
 
-  function retreat() {
-    if (advCounter > 0) {
-      advCounter--
-    }
+  for (var i = 0; i < elems.length; i++) {
+    elems.item(i).classList.remove('adv-hide')
+  }
+  advCounter++
+}
 
-    var elems = document.getElementsByClassName('adv-' + advCounter)
-    for (var i = 0; i < elems.length; i++) {
-      elems.item(i).classList.add('adv-hide')
-    }
+function retreat() {
+  if (advCounter > 0) {
+    advCounter--
   }
 
-  document.addEventListener('keydown', e => (e.keyCode == 39) && advance())
-  document.addEventListener('keydown', e => (e.keyCode == 37) && retreat())
-
-  return {
-    advance,
-    retreat
+  var elems = document.getElementsByClassName('adv-' + advCounter)
+  for (var i = 0; i < elems.length; i++) {
+    elems.item(i).classList.add('adv-hide')
   }
-}()
+}
 
-module.exports = slides
+document.addEventListener('keydown', e => (e.keyCode == 39) && advance())
+document.addEventListener('keydown', e => (e.keyCode == 37) && retreat())
+
+module.exports = { advance, retreat }
