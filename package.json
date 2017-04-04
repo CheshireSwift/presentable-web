@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "mkdir -p dist; browserify index.js -o dist/presentable-web.dist.js -t [ babelify --presets env ] -t uglifyify"
+    "build": "mkdir -p dist; browserify index.js -o dist/presentable-web.dist.js -t [ babelify --presets env ] -t uglifyify --standalone present"
   },
   "author": "",
   "license": "ISC",

@@ -52,3 +52,5 @@ var slides = function() {
     retreat
   }
 }()
+
+module.exports = slides
