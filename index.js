@@ -48,6 +48,7 @@ document.addEventListener('keydown', e => (e.keyCode == 39) && advance())
 document.addEventListener('keydown', e => (e.keyCode == 37) && retreat())
 
 function registerForClicks() {
+  document.addEventListener('contextmenu', e => e.preventDefault())
   document.addEventListener('click', e => e.button ? retreat() : advance())
 }
 
